@@ -38,8 +38,6 @@ body {
     font-size: 16px;
     color: #333;
     border-radius: 16px;
-    margin-top: 20px;
-    line-height: 1.6;
 }
 .info-section h1 {
     font-size: 20px;
@@ -50,7 +48,6 @@ body {
 }
 .info-section p {
     margin-bottom: 20px;
-    text-align: justify;
 }
 .info-section p strong {
     color: #007bff;
@@ -151,20 +148,17 @@ h1 {
         font-size: 18px;
     }
 }
-.footer {
-    background-color: #f8f9fa;
-    padding: 30px 10px;
+.v50 {
     text-align: center;
     font-size: 16px;
     color: #555;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
 }
-.footer img {
+.v50 img {
     width: 200px;
     height: 200px;
     margin-bottom: 20px;
     border-radius: 10px;
 }
-.footer p {
+.v50 p {
     margin: 10px 0;
 }
