@@ -30,6 +30,7 @@ function calculateMetrics() {
 
     // 计算每月月供
     const monthlyPayment = loanAmount * monthlyRate * Math.pow(1 + monthlyRate, months) / (Math.pow(1 + monthlyRate, months) - 1);
+    const totalInterest = monthlyPayment * months - loanAmount;
 
     // 计算购房后的剩余储蓄
     const remainingSavings = currentSavings - downPayment;
@@ -50,6 +51,7 @@ function calculateMetrics() {
         首付款：${(downPayment / 10000).toFixed(2)} 万元<br>
         贷款总额：${(loanAmount / 10000).toFixed(2)} 万元<br>
         每月月供：${monthlyPayment.toFixed(2)} 元<br>
+        总利息：${(totalInterest / 10000).toFixed(2)} 万元<br>
         购房后剩余储蓄：${(remainingSavings / 10000).toFixed(2)} 万元<br>
         储蓄覆盖率：<span class="${savingsCoverageRatio < 1 ? 'red' : 'green'}">${savingsCoverageRatio.toFixed(2)}</span>
     `;
