@@ -7,38 +7,43 @@
     <title>购房经济指标计算器</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous">
     <script src="script.js" defer></script>
 </head>
 
 <body>
+    <h1><i class="fa-solid fa-house-chimney" style="color: #059100; margin-right: 10px;"></i>购房经济指标计算器</h1>
+    <a href="https://hits.seeyoufarm.com"><img
+            src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=http%3A%2F%2Fhouse-calculator-dusky.vercel.app&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E9%87%8F&edge_flat=false" /></a>
     <div class="container">
         <div class="form-section">
-            <h1>购房经济指标计算器</h1>
             <div class="input-group">
-                <label for="income">家庭月收入（元）：</label>
+                <label for="income"><i class="fa-solid fa-wallet"></i> 家庭月收入（元）：</label>
                 <input type="number" id="income" placeholder="请输入您的月收入" aria-label="家庭月收入">
             </div>
             <div class="input-group">
-                <label for="price">房产总价（元）：</label>
+                <label for="price"><i class="fa-solid fa-house"></i> 房产总价（元）：</label>
                 <input type="number" id="price" placeholder="请输入房产总价" aria-label="房产总价">
             </div>
             <div class="input-group">
-                <label for="down_payment">首付比例（%）：</label>
+                <label for="down_payment"><i class="fa-solid fa-percent"></i> 首付比例（%）：</label>
                 <input type="number" id="down_payment" placeholder="请输入首付比例" aria-label="首付比例">
             </div>
             <div class="input-group">
-                <label for="rate">贷款年利率（%）：</label>
+                <label for="rate"><i class="fa-solid fa-percentage"></i> 贷款年利率（%）：</label>
                 <input type="number" id="rate" placeholder="请输入年利率" aria-label="贷款年利率">
             </div>
             <div class="input-group">
-                <label for="years">贷款年限（年）：</label>
+                <label for="years"><i class="fa-solid fa-calendar-days"></i> 贷款年限（年）：</label>
                 <input type="number" id="years" placeholder="请输入贷款年限" aria-label="贷款年限">
             </div>
             <div class="input-group">
-                <label for="savings">当前家庭储蓄（元）：</label>
+                <label for="savings"><i class="fa-solid fa-piggy-bank"></i> 当前家庭储蓄（元）：</label>
                 <input type="number" id="savings" placeholder="请输入储蓄金额" aria-label="当前家庭储蓄">
             </div>
-            <button class="button" onclick="calculateMetrics()">计算</button>
+            <button class="button" onclick="calculateMetrics()"><i class="fa-solid fa-calculator"></i> 计算</button>
         </div>
         <div class="result-section">
             <h1>计算结果</h1>
@@ -54,8 +59,10 @@
                 是指家庭收入中用于储蓄的比例，结合购房后的储蓄情况，可以全面评估财务健康。通常建议购房者保留至少6个月生活费作为应急基金，以应对失业、疾病等突发事件，确保财务稳定。</p>
             <p><strong>注意：</strong><span>在进行购房决策时，您可以参考上述指标，确保自己的财务状况不会因购房而产生过大的负担。</span></p>
             <div class="v50">
-                <img src="appreciate.jpg" alt="赞赏码" aria-label="赞赏码">
-                <p>感谢您的支持，扫码赞赏！</p>
+                <div class="appreciate-section">
+                    <img src="appreciate.jpg" class="appreciate-img" alt="赞赏码" aria-label="赞赏码">
+                    <p>感谢您的支持，扫码赞赏！</p>
+                </div>
             </div>
         </div>
 
