@@ -24,35 +24,10 @@ body {
 }
 .form-section, .result-section, .info-section {
     flex: 1;
-    padding: 30px;
+    padding: 20px;
 }
 .form-section {
     border-right: 1px solid #dee2e6;
-}
-.result-section {
-    background-color: #f8f9fa;
-}
-
-.result-section h1{
-    font-size: 24px;
-    text-align: center;
-    color: #333;
-    margin-bottom: 25px;
-}
-
-.info-section {
-    background-color: #ffffff;
-    padding: 30px;
-    font-size: 16px;
-    color: #333;
-    border-radius: 16px;
-}
-.info-section h1 {
-    font-size: 20px;
-    font-weight: bold;
-    color: #007bff;
-    margin-bottom: 25px;
-    text-align: center;
 }
 .info-section p {
     margin-bottom: 20px;
@@ -151,13 +126,6 @@ body {
     .form-section {
         border-right: none;
         border-bottom: 1px solid #dee2e6;
-    }
-    .info-section {
-        margin-top: 20px;
-        padding: 25px;
-    }
-    .info-section h1 {
-        font-size: 18px;
     }
 }
 .v50 {

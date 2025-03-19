@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +9,9 @@
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-..." crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js"></script>
     <script src="script.js" defer></script>
 </head>
-
 <body>
     <h1><i class="fa-solid fa-house-chimney" style="color: #059100; margin-right: 10px;"></i>购房经济指标计算器</h1>
     <a href="https://hits.seeyoufarm.com"><img
@@ -46,17 +45,16 @@
             <button class="button" onclick="calculateMetrics()"><i class="fa-solid fa-calculator"></i> 计算</button>
         </div>
         <div class="result-section">
-            <h1>计算结果</h1>
+            <h2>计算结果</h2>
             <div class="result" id="result">结果将在这里显示。</div>
-            <h1>建议</h1>
+            <h2><i class="fa-solid fa-robot"></i> AI 建议</h2>
             <div class="advice" id="advice">建议将在这里显示。</div>
         </div>
         <div class="info-section">
-            <h1>计算公式与介绍</h1>
+            <h2>计算公式与介绍</h2>
             <p><strong>房价收入比：</strong> 房价收入比 = 房产总价 / 年收入（年收入 = 月收入 × 12）。这是衡量房价相对家庭收入的指标。一般来说，房价收入比超过 10 被认为是偏高的。</p>
             <p><strong>月供收入比：</strong> 月供收入比 = 每月还款额 / 月收入。通常，月供占收入比不应超过 40%，超过可能会对家庭财务产生压力。</p>
-            <p><strong>储蓄覆盖率：</strong>
-                是指家庭收入中用于储蓄的比例，结合购房后的储蓄情况，可以全面评估财务健康。通常建议购房者保留至少6个月生活费作为应急基金，以应对失业、疾病等突发事件，确保财务稳定。</p>
+            <p><strong>储蓄覆盖率：</strong> 是指家庭收入中用于储蓄的比例，结合购房后的储蓄情况，可以全面评估财务健康。通常建议购房者保留至少6个月生活费作为应急基金，以应对失业、疾病等突发事件，确保财务稳定。</p>
             <p><strong>注意：</strong><span>在进行购房决策时，您可以参考上述指标，确保自己的财务状况不会因购房而产生过大的负担。</span></p>
             <div class="v50">
                 <div class="appreciate-section">
@@ -65,8 +63,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </body>
-
 </html>
