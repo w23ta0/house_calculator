@@ -1,68 +1,136 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>购房经济指标计算器</title>
+    <meta name="description" content="购房经济指标计算器 - 帮助您分析房价收入比、月供收入比等关键指标，做出明智的购房决策">
+    <meta name="keywords" content="购房计算器,房贷计算,房价收入比,月供计算">
+    <title>购房经济指标计算器 | 智能购房决策助手</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-..." crossorigin="anonymous">
+        crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js"></script>
     <script src="script.js" defer></script>
 </head>
+
 <body>
-    <h1><i class="fa-solid fa-house-chimney" style="color: #059100; margin-right: 10px;"></i>购房经济指标计算器</h1>
-    <a href="https://hits.seeyoufarm.com"><img
-            src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=http%3A%2F%2Fhouse-calculator-dusky.vercel.app&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E9%87%8F&edge_flat=false" /></a>
+    <h1>
+        <i class="fa-solid fa-house-chimney"></i>
+        购房经济指标计算器
+    </h1>
+
     <div class="container">
-        <div class="form-section">
+        <!-- 输入表单区域 -->
+        <section class="form-section">
+            <h2><i class="fa-solid fa-edit"></i> 数据输入</h2>
+
             <div class="input-group">
-                <label for="income"><i class="fa-solid fa-wallet"></i> 家庭月收入（元）：</label>
-                <input type="number" id="income" placeholder="请输入您的月收入" aria-label="家庭月收入">
+                <label for="income">
+                    <i class="fa-solid fa-wallet"></i> 家庭月收入（元）
+                </label>
+                <input type="number" id="income" placeholder="例如：20000" aria-label="家庭月收入">
             </div>
+
             <div class="input-group">
-                <label for="price"><i class="fa-solid fa-house"></i> 房产总价（元）：</label>
-                <input type="number" id="price" placeholder="请输入房产总价" aria-label="房产总价">
+                <label for="price">
+                    <i class="fa-solid fa-house"></i> 房产总价（元）
+                </label>
+                <input type="number" id="price" placeholder="例如：2000000" aria-label="房产总价">
             </div>
+
             <div class="input-group">
-                <label for="down_payment"><i class="fa-solid fa-percent"></i> 首付比例（%）：</label>
-                <input type="number" id="down_payment" placeholder="请输入首付比例" aria-label="首付比例">
+                <label for="down_payment">
+                    <i class="fa-solid fa-percent"></i> 首付比例（%）
+                </label>
+                <input type="number" id="down_payment" placeholder="例如：30" aria-label="首付比例">
             </div>
+
             <div class="input-group">
-                <label for="rate"><i class="fa-solid fa-percentage"></i> 贷款年利率（%）：</label>
-                <input type="number" id="rate" placeholder="请输入年利率" aria-label="贷款年利率">
+                <label for="rate">
+                    <i class="fa-solid fa-chart-line"></i> 贷款年利率（%）
+                </label>
+                <input type="number" id="rate" placeholder="例如：4.2" step="0.01" aria-label="贷款年利率">
             </div>
+
             <div class="input-group">
-                <label for="years"><i class="fa-solid fa-calendar-days"></i> 贷款年限（年）：</label>
-                <input type="number" id="years" placeholder="请输入贷款年限" aria-label="贷款年限">
+                <label for="years">
+                    <i class="fa-solid fa-calendar-days"></i> 贷款年限（年）
+                </label>
+                <input type="number" id="years" placeholder="例如：30" aria-label="贷款年限">
             </div>
+
             <div class="input-group">
-                <label for="savings"><i class="fa-solid fa-piggy-bank"></i> 当前家庭储蓄（元）：</label>
-                <input type="number" id="savings" placeholder="请输入储蓄金额" aria-label="当前家庭储蓄">
+                <label for="savings">
+                    <i class="fa-solid fa-piggy-bank"></i> 当前家庭储蓄（元）
+                </label>
+                <input type="number" id="savings" placeholder="例如：500000" aria-label="当前家庭储蓄">
             </div>
-            <button class="button" onclick="calculateMetrics()"><i class="fa-solid fa-calculator"></i> 计算</button>
-        </div>
-        <div class="result-section">
-            <h2>计算结果</h2>
-            <div class="result" id="result">结果将在这里显示。</div>
-            <h2><i class="fa-solid fa-robot"></i> AI 建议</h2>
-            <div class="advice" id="advice">建议将在这里显示。</div>
-        </div>
-        <div class="info-section">
-            <h2>计算公式与介绍</h2>
-            <p><strong>房价收入比：</strong> 房价收入比 = 房产总价 / 年收入（年收入 = 月收入 × 12）。这是衡量房价相对家庭收入的指标。一般来说，房价收入比超过 10 被认为是偏高的。</p>
-            <p><strong>月供收入比：</strong> 月供收入比 = 每月还款额 / 月收入。通常，月供占收入比不应超过 40%，超过可能会对家庭财务产生压力。</p>
-            <p><strong>储蓄覆盖率：</strong> 是指家庭收入中用于储蓄的比例，结合购房后的储蓄情况，可以全面评估财务健康。通常建议购房者保留至少6个月生活费作为应急基金，以应对失业、疾病等突发事件，确保财务稳定。</p>
-            <p><strong>注意：</strong><span>在进行购房决策时，您可以参考上述指标，确保自己的财务状况不会因购房而产生过大的负担。</span></p>
+
+            <button class="button" id="calculate-btn" onclick="calculateMetrics()">
+                <i class="fa-solid fa-calculator"></i> 开始计算
+            </button>
+        </section>
+
+        <!-- 结果展示区域 -->
+        <section class="result-section">
+            <h2><i class="fa-solid fa-chart-pie"></i> 计算结果</h2>
+            <div class="result" id="result">
+                <p style="text-align: center; color: var(--text-muted);">
+                    <i class="fa-solid fa-arrow-left" style="margin-right: 8px;"></i>
+                    填写左侧表单后点击计算按钮
+                </p>
+            </div>
+
+            <h2><i class="fa-solid fa-robot"></i> AI 购房建议</h2>
+            <div class="advice" id="advice">
+                <p style="text-align: center; color: var(--text-muted);">
+                    <i class="fa-solid fa-wand-magic-sparkles" style="margin-right: 8px;"></i>
+                    AI 将根据您的数据提供专业建议
+                </p>
+            </div>
+        </section>
+
+        <!-- 信息介绍区域 -->
+        <section class="info-section">
+            <h2><i class="fa-solid fa-circle-info"></i> 指标说明</h2>
+
+            <p>
+                <strong><i class="fa-solid fa-scale-balanced"></i> 房价收入比</strong><br>
+                房价收入比 = 房产总价 / 年收入。这是衡量房价相对家庭收入的核心指标。
+                <span>一般来说，房价收入比超过 10 被认为压力较大。</span>
+            </p>
+
+            <p>
+                <strong><i class="fa-solid fa-money-bill-trend-up"></i> 月供收入比</strong><br>
+                月供收入比 = 每月还款额 / 月收入。反映还贷对日常生活的影响程度。
+                <span>建议月供不超过收入的 40%，否则可能影响生活质量。</span>
+            </p>
+
+            <p>
+                <strong><i class="fa-solid fa-shield-halved"></i> 储蓄覆盖率</strong><br>
+                评估购房后剩余储蓄能覆盖多少个月的月供支出。
+                <span>建议至少保留 6 个月月供作为应急资金。</span>
+            </p>
+
+            <p>
+                <strong><i class="fa-solid fa-lightbulb"></i> 温馨提示</strong><br>
+                <span>以上指标仅供参考，实际购房决策需综合考虑个人情况、市场趋势等多种因素。</span>
+            </p>
+
             <div class="v50">
                 <div class="appreciate-section">
                     <img src="appreciate.jpg" class="appreciate-img" alt="赞赏码" aria-label="赞赏码">
-                    <p>感谢您的支持，扫码赞赏！</p>
+                    <p>感谢您的支持与使用！</p>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
 </body>
+
 </html>
