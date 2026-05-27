@@ -1,0 +1,10 @@
+{
+  "name": "house-calculator",
+  "version": "2.0.0",
+  "description": "购房经济指标计算器 — 智能购房决策助手",
+  "private": true,
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  }
+}
