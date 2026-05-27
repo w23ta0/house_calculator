@@ -112,7 +112,7 @@ function renderMarkdownWithTypewriter(content) {
 
   // 使用 showdown.js 将 Markdown 转为 HTML
   const converter = new showdown.Converter();
-  let html = converter.makeHTML(content);
+  let html = converter.makeHtml(content);
 
   // 将 <h1>~<h6> 标签替换为 <strong>...<br> 格式（简化标题显示）
   html = html.replace(/<h[1-6][^>]*>(.*?)<\/h[1-6]>/g, "<strong>$1</strong><br>");
