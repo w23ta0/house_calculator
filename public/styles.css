@@ -341,20 +341,6 @@ h1 i {
     border-left: 3px solid var(--accent-warning);
 }
 
-/* Placeholder text in result/advice */
-.result p,
-.advice p {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    margin: 0;
-    padding: var(--spacing-md) 0;
-}
-
-.result span,
-.advice span {
-    display: inline-block;
-}
-
 /* ===== Status Colors ===== */
 .red {
     color: var(--accent-danger) !important;
